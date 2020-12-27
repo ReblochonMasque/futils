@@ -9,7 +9,7 @@ eggs/
 
 
 # Apple OSX
-*.DS_Store
+.DS_Store
 
 # Jupyter and iPython notebook checkpoints
 *.ipynb_checkpoints
