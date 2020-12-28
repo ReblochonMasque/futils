@@ -19,11 +19,19 @@ def with_previous(iterable) -> tuple:
 def count(start=0, step=1):
     """perpetual counter that starts at start, and increments by step
     generates an infinite sequence of numbers
+    Make an iterator that returns consecutive integers starting with start.
+    If not specified n defaults to zero. Often used as an argument to map()
+    to generate consecutive data points.
+    Also, used with zip() to add sequence numbers
     """
-    ndx = start
+    n = 0
     while True:
-        yield start
-        start += step
+        yield start + step * n
+        n += 1
+
+
+def transpose(iterable):
+    return list(zip(*iterable))
 
 
 if __name__ == '__main__':
