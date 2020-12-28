@@ -19,6 +19,7 @@ eggs/
 *.ipynb_checkpoints
 
 # ./idea
+.idea/
 /.idea/misc.xml
 /futils.iml
 /modules.xml
