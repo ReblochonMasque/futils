@@ -1,1 +1,5 @@
-from .src import hello
+from .src import *
+
+__all__ = [hello,
+           with_previous,
+           ]
