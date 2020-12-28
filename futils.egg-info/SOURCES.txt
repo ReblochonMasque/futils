@@ -1,6 +1,0 @@
-README.md
-setup.py
-futils.egg-info/PKG-INFO
-futils.egg-info/SOURCES.txt
-futils.egg-info/dependency_links.txt
-futils.egg-info/top_level.txt
