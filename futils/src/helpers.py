@@ -14,3 +14,20 @@ def with_previous(iterable) -> tuple:
             yield previous, current
             previous = current
     return iter(it())
+
+
+def count(start=0, step=1):
+    """perpetual counter that starts at start, and increments by step
+    generates an infinite sequence of numbers
+    """
+    ndx = start
+    while True:
+        yield start
+        start += step
+
+
+if __name__ == '__main__':
+    for n in count(step=3):
+        print(n)
+        if n >= 15:
+            break
