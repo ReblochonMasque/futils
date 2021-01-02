@@ -2,8 +2,10 @@
 an aggregate of various helper functions made available for import
 """
 
+from typing import Iterator
 
-def with_previous(iterable) -> tuple:
+
+def with_previous(iterable) -> Iterator:
     """returns an iterator of tuples (previous, current) items
     enumerated from the provided iterable parameter
     """
