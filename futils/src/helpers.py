@@ -36,8 +36,47 @@ def transpose(iterable):
     return list(zip(*iterable))
 
 
+def make_average():
+    """ makes and returns a closure that can be incrementally called with
+    the values to average, maybe as they become available, and returns their
+    average calculated in a numerically stable manner
+
+    :return: a closure
+
+    >>> avg = make_average()
+    >>> print(avg(10))
+    10.0
+    >>> print(avg(11))
+    10.5
+    >>> print(avg(12))
+    11.0
+    >>> print(avg(13))
+    11.5
+    """
+    total = 0
+    num_val = 0
+    def averager(new_val):
+        nonlocal total, num_val
+        total += new_val
+        num_val += 1
+        return total / num_val
+    return averager
+
+
 if __name__ == '__main__':
     for n in count(step=3):
         print(n)
         if n >= 15:
             break
+
+    avg = make_average()
+
+    print(avg(10))
+    print(avg(11))
+    print(avg(12))
+    print(avg(13))
+
+    print(avg.__code__.co_varnames)
+    print(avg.__code__.co_freevars)
+    print(avg.__closure__[0].cell_contents)
+
