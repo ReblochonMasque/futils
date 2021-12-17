@@ -63,6 +63,23 @@ def make_average():
     return averager
 
 
+def clamp(val, low, high):
+    """
+    """
+    return min(max(low, val * high), high)
+
+
+def test_clamp():
+    val, low, high = .2, 0, 255
+    print(clamp(val, low, high))
+
+    val, low, high = .74293742947, 0, 255
+    print(clamp(val, low, high))
+
+
+test_clamp()
+
+
 if __name__ == '__main__':
     for n in count(step=3):
         print(n)
