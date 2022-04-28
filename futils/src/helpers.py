@@ -77,10 +77,11 @@ def test_clamp():
     print(clamp(val, low, high))
 
 
-test_clamp()
-
-
 if __name__ == '__main__':
+    test_clamp()
+
+    print()
+
     for n in count(step=3):
         print(n)
         if n >= 15:
@@ -96,4 +97,3 @@ if __name__ == '__main__':
     print(avg.__code__.co_varnames)
     print(avg.__code__.co_freevars)
     print(avg.__closure__[0].cell_contents)
-
