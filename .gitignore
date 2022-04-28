@@ -10,7 +10,7 @@ __pycache__/
 *.egg-info/
 *.egg
 eggs/
-
+/**/build
 
 # Apple OSX
 .DS_Store
@@ -25,5 +25,3 @@ eggs/
 /modules.xml
 /inspectionProfiles/profiles_settings.xml
 /vcs.xml
-/futils.egg-info/*.*
-/build/*.*
