@@ -2,7 +2,7 @@
 an aggregate of various helper functions made available for import
 """
 
-from typing import Iterator
+from typing import Iterator, Sequence, TypeVar
 
 
 def with_previous(iterable) -> Iterator:
@@ -67,6 +67,21 @@ def clamp(val, low, high):
     """
     """
     return min(max(low, val * high), high)
+
+
+T = TypeVar("T")
+
+
+def chunks(data: Sequence[T], length: int) -> Iterator[Sequence[T]]:
+    """returns a generator of the data in chunks of size length chunks
+    The last chunk may be shorter
+    """
+    # for idx in range(0, len(data), length):
+    #     yield data[idx: idx+length]
+    return (data[idx: idx+length] for idx in range(0, len(data), length))
+
+
+print([chunk for chunk in chunks(tuple('abcdefgh'), 2)])
 
 
 def test_clamp():
