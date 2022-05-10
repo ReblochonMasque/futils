@@ -1,10 +1,12 @@
 from .helpers import *
+from .linkedlist import *
 
 
 __all__ = [
     'chunks',
     'clamp',
     'count',
+    'llist',
     'make_average',
     'transpose',
     'with_previous',
