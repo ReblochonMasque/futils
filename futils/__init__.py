@@ -1,7 +1,14 @@
 from .src import *
 
+
 __all__ = [
-    'hello',
-    'with_previous',
+    'chunks',
+    'clamp',
+    'cmp',
     'count',
+    'lcm',
+    'llist',
+    'make_average',
+    'transpose',
+    'with_previous',
 ]
