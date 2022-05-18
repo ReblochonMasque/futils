@@ -90,7 +90,6 @@ def lcm(nums: Collection[int]) -> int:
     lcm(18, 28, 44)
     2772
 
-
     :param nums: a Collection of ints
     :return: int
     """
