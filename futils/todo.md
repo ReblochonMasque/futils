@@ -9,3 +9,15 @@
 
 
 ### tests - tests - Tests - TESTS!!!
+
+
+### triangular numbers
+```python
+def triangular(x: int) -> int:
+    return x * (x + 1) // 2
+```
+
+
+### farey sequence
+- add farey sequence (extract from AOC)
+- add the all int slope vectors in 2D
