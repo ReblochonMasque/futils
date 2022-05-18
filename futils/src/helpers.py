@@ -2,7 +2,10 @@
 an aggregate of various helper functions made available for import
 """
 
-from typing import Iterator, Sequence, TypeVar
+import math
+
+from functools import reduce
+from typing import Collection, Iterator, Sequence, TypeVar
 
 
 def with_previous(iterable) -> Iterator:
@@ -55,12 +58,44 @@ def make_average():
     """
     total = 0
     num_val = 0
+
     def averager(new_val):
         nonlocal total, num_val
         total += new_val
         num_val += 1
         return total / num_val
     return averager
+
+
+def cmp(a, b) -> int:
+    """old school cmp function
+    """
+    if a < b:
+        return -1
+    if a > b:
+        return 1
+    return 0
+
+
+def lcm(nums: Collection[int]) -> int:
+    """calculates the least common multiple of a collection of int
+
+    # a, b, c = nums
+    # ab = a * b // math.gcd(a, b)
+    # return ab * c // math.gcd(ab, c)
+
+    lcm(231614, 96236, 144624)
+    402951477454512
+
+    lcm(18, 28, 44)
+    2772
+
+
+    :param nums: a Collection of ints
+    :return: int
+    """
+
+    return reduce(lambda a, b: a * b // math.gcd(a, b), nums)
 
 
 def clamp(val, low, high):
@@ -81,9 +116,6 @@ def chunks(data: Sequence[T], length: int) -> Iterator[Sequence[T]]:
     return (data[idx: idx+length] for idx in range(0, len(data), length))
 
 
-print([chunk for chunk in chunks(tuple('abcdefgh'), 2)])
-
-
 def test_clamp():
     val, low, high = .2, 0, 255
     print(clamp(val, low, high))
@@ -93,6 +125,9 @@ def test_clamp():
 
 
 if __name__ == '__main__':
+
+    print([chunk for chunk in chunks(tuple('abcdefgh'), 2)])
+
     test_clamp()
 
     print()

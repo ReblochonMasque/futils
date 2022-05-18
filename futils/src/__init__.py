@@ -5,7 +5,9 @@ from .linkedlist import *
 __all__ = [
     'chunks',
     'clamp',
+    'cmp',
     'count',
+    'lcm',
     'llist',
     'make_average',
     'transpose',
